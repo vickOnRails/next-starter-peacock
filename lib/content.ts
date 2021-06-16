@@ -1,12 +1,11 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { v4 as uuid } from "uuid";
-import { exception } from "console";
-import remark from "remark";
-import html from "remark-html";
-import remarkPrism from "remark-prism";
-import { IContentData } from "../pages/articles/[id]";
+import { exception } from 'console';
+import fs from 'fs';
+import matter from 'gray-matter';
+import path from 'path';
+import remark from 'remark';
+import highlight from 'remark-highlight.js';
+import { v4 as uuid } from 'uuid';
+import { IContentData } from '../pages/articles/[id]';
 
 const workDirectory = path.join(process.cwd(), "content", "work");
 const notesDirectory = path.join(process.cwd(), "content", "notes");
@@ -108,8 +107,7 @@ export const getContentData = async (id: string, contentType: IContentType) => {
 
   const matterResult = matter(fileContents);
   const processedContent = await remark()
-    .use(html)
-    .use(remarkPrism)
+    .use(highlight)
     .process(matterResult.content);
 
   const contentHtml = processedContent.toString();
@@ -226,7 +224,7 @@ export const getContentWithTag = (tag: string, contentType: IContentType) => {
  */
 export const getContentInCategory = (
   category: string,
-  contentType: IContentType
+  contentType: IContentType,
 ) => {
   let contentDir;
   let contentFiles;
