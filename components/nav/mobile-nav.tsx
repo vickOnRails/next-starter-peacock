@@ -1,9 +1,9 @@
 'use client'
 
 import { cn } from '@utils/cn';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { useMenuContext } from '../MenuContext';
-import { AnimatePresence, motion } from 'framer-motion'
 
 // TODO: have some kind of functionality for closing the mobile menu when navigation occurs
 // this was possible in previous versions with router.events, but not in newer next.js versions
@@ -40,8 +40,8 @@ export function MobileNav() {
               </li>
 
               <li className="text-center mb-4">
-                <Link href="/works" className="text-lg" onClick={() => toggleMenuOpen()}>
-                  Works
+                <Link href="/work" className="text-lg" onClick={() => toggleMenuOpen()}>
+                  Work
                 </Link>
               </li>
 

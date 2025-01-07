@@ -1,8 +1,9 @@
 import { Container, Header, Testimonials, WorkItem } from '@components';
 import { getContentList } from '@utils/content';
-import { site, author } from '../config/index.json'
-import testimonials from '../config/testimonials.json'
 import { Metadata } from 'next';
+import { author, site } from '../config/index.json';
+import testimonials from '../config/testimonials.json';
+
 /**
  * Index page `/index`
  */
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
 }
 
 const Index = () => {
-    const content = getContentList('works')
+    const content = getContentList('work')
         .filter((work) => work.selectedWork);
 
     return (

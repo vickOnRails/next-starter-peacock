@@ -29,7 +29,7 @@ export type IContent = {
   category?: string;
 }
 
-export type IContentType = 'articles' | 'notes' | 'works';
+export type IContentType = 'articles' | 'notes' | 'work';
 
 /**
  * Get IDs of all markdown post
@@ -52,7 +52,7 @@ export const getAllContentIds = (contentType: IContentType) => {
       filenames = fs.readdirSync(notesDirectory);
       break;
 
-    case 'works':
+    case 'work':
       baseDir = workDirectory;
       filenames = fs.readdirSync(workDirectory);
       break;
@@ -98,7 +98,7 @@ export const getContentData = async (id: string, contentType: IContentType) => {
       contentTypeDirectory = notesDirectory;
       break;
 
-    case 'works':
+    case 'work':
       filenames = fs.readdirSync(workDirectory);
       contentTypeDirectory = workDirectory;
       break;
@@ -168,7 +168,7 @@ export const getContentList = (contentType: IContentType): IContent[] => {
       contentDir = notesDirectory;
       break;
 
-    case 'works':
+    case 'work':
       contentFiles = fs.readdirSync(workDirectory);
       contentDir = workDirectory;
       break;
@@ -211,7 +211,7 @@ export const getContentWithTag = (tag: string, contentType: IContentType) => {
       contentDir = notesDirectory;
       break;
 
-    case 'works':
+    case 'work':
       contentDir = workDirectory;
       break;
   }
@@ -262,7 +262,7 @@ export const getContentInCategory = (
       contentDir = notesDirectory;
       break;
 
-    case 'works':
+    case 'work':
       contentDir = workDirectory;
       break;
   }
