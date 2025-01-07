@@ -1,5 +1,10 @@
 import { Chips, Container } from '@components';
-import { IContentType, getContentData, getContentList, getContentTypes } from '@utils/content';
+import {
+  getContentData,
+  getContentList,
+  getContentTypes,
+  IContentType,
+} from '@utils/content';
 import { CONTENT_TYPES_MAP } from '@utils/content-types';
 import { Metadata } from 'next';
 import Image from 'next/image';
@@ -68,7 +73,7 @@ export default async function ContentPage({ params }: { params: Params }) {
     const content = await fetchContentData(slug, contentType);
     if (content.draft) return notFound();
 
-    if (contentType === 'works') return <WorkPage work={content} />
+    if (contentType === 'work') return <WorkPage work={content} />
 
     return (
         <Container width="narrow">

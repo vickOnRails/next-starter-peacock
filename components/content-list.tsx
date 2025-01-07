@@ -9,8 +9,8 @@ interface ContentListProps extends HTMLAttributes<HTMLElement> {
 }
 
 export function ContentList({ items, contentType, basePath }: ContentListProps) {
-    if (contentType === 'works') {
-        const otherWorks = items.filter(x => !x.selectedWork);
+    if (contentType === 'work') {
+        const otherWork = items.filter(x => !x.selectedWork);
         return (
             <section>
                 <section className="flex flex-col gap-8 pb-10 mb-10 border-b border-accent-8">
@@ -19,11 +19,11 @@ export function ContentList({ items, contentType, basePath }: ContentListProps) 
                     ))}
                 </section>
 
-                {otherWorks.length > 0 && (
+                {otherWork.length > 0 && (
                     <>
                         <h3 className="text-3xl font-bold text-accent-3 mb-16 font-display">Other Experiments</h3>
                         <section className="flex gap-8">
-                            <WorkListGrid works={otherWorks} />
+                            <WorkListGrid work={otherWork} />
                         </section>
                     </>
                 )}
@@ -37,10 +37,10 @@ export function ContentList({ items, contentType, basePath }: ContentListProps) 
     )
 }
 
-function WorkListGrid({ works }: { works: IContent[] }) {
+function WorkListGrid({ work }: { work: IContent[] }) {
     return (
         <section className="flex flex-col lg:flex-row flex-wrap gap-8 pb-10 mb-10 w-full">
-            {works.map(item => (
+            {work.map(item => (
                 <WorkItem key={item.slug} work={item} grid />
             ))}
         </section>

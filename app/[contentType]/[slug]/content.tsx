@@ -1,8 +1,7 @@
 'use client'
-import React, { useEffect } from 'react'
-
-import hljs from 'highlight.js/lib/core';
+import hljs from 'highlight.js';
 import javascript from 'highlight.js/lib/languages/javascript';
+import React, { useEffect } from 'react';
 
 export default function Content({ html }: { html: string }) {
     useEffect(() => {

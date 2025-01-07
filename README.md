@@ -50,7 +50,7 @@ Peacock ships with 3 basic content types
 
 - **Articles**: Long form content. Think blog posts 📚. All articles are in the `/content/articles` folder. Any markdown document you add here will show on the `/articles` page.
 - **Notes**: Short form Spontaneous content 🖋. All notes are in the `/content/notes` folder.
-- **Works**: Case studies and projects you want to show 🛠. All works are in the `/content/works` folder. There's a `selectedWork` field in the markdown meta. Setting it to `true` will display the case study/work on the `index.tsx` page.
+- **Work**: Case studies and projects you want to show 🛠. All work is in the `/content/work` folder. There's a `selectedWork` field in the markdown meta. Setting it to `true` will display the case study/work on the `index.tsx` page.
 
 ## Deploy to Vercel
 

@@ -1,9 +1,9 @@
+import placeholderImg from '/public/images/placeholder.jpg';
 import { cn } from '@utils/cn';
 import { IContent } from '@utils/content';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'react-feather';
-import placeholderImg from '/public/images/placeholder.jpg';
 
 // TODO: use some type of hash function to generate the colors
 const COLORS_LOOKUP = {
@@ -17,7 +17,7 @@ export function WorkItem({ work, grid }: { work: IContent, grid?: boolean }) {
 
     const { title, slug, description } = work
     return (
-        <Link href={`/works/${slug}`} className={cn('group rounded-xl select-none no-underline flex flex-col lg:py-10 w-full md:flex-row transition-transform hover:cursor-pointer hover:scale-[102%] active:scale-95', COLORS_LOOKUP[slug])}>
+        <Link href={`/work/${slug}`} className={cn('group rounded-xl select-none no-underline flex flex-col lg:py-10 w-full md:flex-row transition-transform hover:cursor-pointer hover:scale-[102%] active:scale-95', COLORS_LOOKUP[slug])}>
             <section className="flex flex-col flex-1 lg:order-2">
                 <Image className="w-full rounded-t-md lg:rounded-none" src={work.previewImage ?? placeholderImg} alt="" width={500} height={300} />
             </section>
@@ -41,7 +41,7 @@ function WorkGridItem({ work }: { work: IContent }) {
     const { title, slug, description } = work
 
     return (
-        <Link href={`/works/${slug}`} className="group rounded-md no-underline select-none transition-transform hover:cursor-pointer hover:scale-[102%] bg-accent-8 w-full lg:w-[30%] active:scale-95">
+        <Link href={`/work/${slug}`} className="group rounded-md no-underline select-none transition-transform hover:cursor-pointer hover:scale-[102%] bg-accent-8 w-full lg:w-[30%] active:scale-95">
             <section>
                 <Image className="w-full rounded-t-md" src={work.previewImage ?? placeholderImg} alt="" width={300} height={150} />
             </section>

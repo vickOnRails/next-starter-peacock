@@ -1,10 +1,9 @@
 'use client'
 
-import Link from 'next/link';
-import { ReactNode, useEffect, useState } from 'react';
-
 import { Logo } from '@components';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
+import { ReactNode, useEffect, useState } from 'react';
 import { Loader, Moon, Rss, Sun } from 'react-feather';
 import SiteConfig from '../../config/index.json';
 import { Container } from '../container';
@@ -38,7 +37,7 @@ export function Nav() {
             )}
 
             <nav className="hidden list-none md:flex md:items-center">
-              <NavItem title="Works" href="/works" />
+              <NavItem title="Work" href="/work" />
               <NavItem title="Articles" href="/articles" />
               <NavItem title="Notes" href="/notes" />
               <NavItem title="About" href="/about" />
@@ -81,4 +80,3 @@ function NavItem({ title, href, external = false }: { title: string | ReactNode,
   );
 
 }
-
