@@ -1,11 +1,11 @@
+import { IContent } from '@utils/content';
+import Link from 'next/link';
 import React from 'react';
 import { Calendar } from 'react-feather';
-import Link from 'next/link';
-import { IContent } from '@utils/content';
 
 export function Note({ date, title, slug, basePath }: IContent) {
   return (
-    <Link href={`/${basePath}/[id]`} as={`/${basePath}/${slug}`} className="cursor-pointer no-underline hover:underline">
+    <Link href={`/${basePath}/${slug}`} className="cursor-pointer no-underline hover:underline">
       <article className="flex flex-col mb-4 sm:mb-0 sm:flex-row sm:items-center">
         <time className="flex w-52 text-sm items-center">
           <span className="date-icon">

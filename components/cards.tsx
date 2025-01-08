@@ -27,8 +27,7 @@ const Cards = ({ items, basePath }: ICard) => {
           key={singleCard.slug}
         >
           <Link
-            href={`/${basePath}/[id]`}
-            as={`/${basePath}/${singleCard.slug}`}
+            href={`/${basePath}/${singleCard.slug}`}
             className="no-underline"
           >
             <div className="overflow-hidden max-h-40 mb-2">
